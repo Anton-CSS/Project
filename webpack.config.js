@@ -7,7 +7,7 @@ const config = {
         app: ['./src/components/index.jsx'],
     },
     output: {
-        path: path.resolve(__dirname, 'public/js'),
+        path: path.resolve(__dirname, 'public'),
         globalObject: 'this',
         filename: '[name].js',
     },
