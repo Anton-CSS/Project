@@ -23,17 +23,9 @@ export default function LoginPage() {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     width: '300px',
     margin: 'auto',
-    // marginTop: '10vh',
   };
 
-  // const style = {
-  //   backgroundImage:
-  //     "url('https://cojo.ru/wp-content/uploads/2022/12/rik-s-pistoletom-rik-i-morti-2.webp')",
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   height: '700px',
-  // };
-
+  
   return (
     <div >
       <div style={formContainerStyle}>
@@ -50,7 +42,6 @@ export default function LoginPage() {
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
-
     </div>
 
   );

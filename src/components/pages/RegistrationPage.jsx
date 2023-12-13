@@ -23,16 +23,9 @@ export default function RegistrationPage() {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     width: '300px',
     margin: 'auto',
-    // marginTop: '10vh',
   };
 
-  // const style = {
-  //   backgroundImage:
-  //     "url('https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666336002_31-mykaleidoscope-ru-p-zloi-rik-i-morti-oboi-33.jpg')",
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   height: '700px',
-  // };
+
   return (
     <div >
       <div style={formContainerStyle}>
