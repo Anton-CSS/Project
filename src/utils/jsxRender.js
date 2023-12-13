@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-filename-extension */
 import { renderToString } from 'react-dom/server';
 import React from 'react';
 import Layout from '../components/Layout';
