@@ -12,13 +12,14 @@ export default function LoginPage() {
     });
 
     if (response.status === 200) {
-      window.location.href = '/';
+      window.location.href = '/add';
     }
   };
   
   return (
       <div className="form__card">
-        <form onSubmit={handleSubmit} className="form__login">
+        <h2 className="register">Войти</h2>
+        <form onSubmit={handleSubmit} className="form__log">
           <input type="password" minLength="8" name="password" placeholder="Пароль" autoComplete="Пароль" />
           <input type="email" name="email" placeholder="Введите свою почту" />
           <button className="tombol-register" type="submit" >Войти</button>

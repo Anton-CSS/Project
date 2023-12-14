@@ -12,14 +12,14 @@ export default function RegistrationPage() {
     });
 
     if (response.status === 200) {
-      window.location.href = '/';
+      window.location.href = '/add';
     }
   };
   
 
   return (
       <div className="form__card">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form__reg">
           <h2 className="register">Регистрация</h2>
           <p id="passwordError"></p>
           <input type="text" placeholder="Введите имя" name="name" autoComplete="username" />

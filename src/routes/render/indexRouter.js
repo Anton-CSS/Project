@@ -3,6 +3,7 @@ import { Picture, Album, User } from '../../../db/models'
 const indexRouter = express.Router();
 
 indexRouter.get('/', (req, res) => res.render('MainPage'));
+indexRouter.get('/add', (req, res) => res.render('AddNewAlbum'));
 indexRouter.get('/posts', async (req, res) =>{
  
  const users = await User.findAll({

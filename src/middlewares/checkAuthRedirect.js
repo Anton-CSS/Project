@@ -1,6 +1,6 @@
 const checkAuthRedirect = (req, res, next) => {
   if (req.cookies?.refreshToken) {
-    res.redirect('/');
+    res.redirect('/add');
   }
   return next();
 };
