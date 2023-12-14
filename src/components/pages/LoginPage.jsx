@@ -15,34 +15,17 @@ export default function LoginPage() {
       window.location.href = '/';
     }
   };
-
-  const formContainerStyle = {
-    background: 'rgba(255, 255, 255, 0)',
-    borderRadius: '8px',
-    padding: '20px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    width: '300px',
-    margin: 'auto',
-  };
+  
 
   
   return (
-    <div >
-      <div style={formContainerStyle}>
-        <h1>Sign Up</h1>
+      <div className="card">
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-            <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <input type="password" minLength="8" name="password" placeholder="Пароль" autoComplete="Пароль" />
+          <input type="email" name="email" placeholder="Введите свою почту" />
+          <button className="tombol-register" type="submit" >Войти</button>
         </form>
       </div>
-    </div>
 
   );
 }
