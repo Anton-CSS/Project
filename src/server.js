@@ -7,8 +7,11 @@ import apiAuthRouter from './routes/api/apiAuthRouter';
 import authRouter from './routes/render/authRouter';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/render/indexRouter';
+import multer from 'multer';
 import resLocals from './middlewares/resLocals';
+import bodyParser from "body-parser";
 
+const upload = multer({ dest: 'uploads/' });
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -22,6 +25,7 @@ app.set('views', path.join(__dirname, 'components', 'pages'));
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json());
 app.use(cookieParser());
 app.use(resLocals);

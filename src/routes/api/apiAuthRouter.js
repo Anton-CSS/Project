@@ -3,9 +3,9 @@ import bcrypt from 'bcrypt';
 import { User } from '../../../db/models';
 import generateTokens from '../../utils/generateTokens';
 import cookiesConfig from '../../config/cookiesConfig';
-
+import multer from "multer";
 const apiAuthRouter = express.Router();
-
+import upload from "../../middlewares/file";
 apiAuthRouter.post('/reg', async (req, res) => {
   try {
     const { name, password, email } = req.body;
@@ -62,5 +62,23 @@ apiAuthRouter.post('/login', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+})
+
+apiAuthRouter.post('/upload', upload.array('photos', 12), function (req, res, next) {
+    // req.files - массив файлов `photos`
+    // req.body сохранит текстовые поля, если они будут
+  console.log(req.files)
+  });
+
 
 export default apiAuthRouter;

@@ -9,7 +9,7 @@ export default function Layout({ children, initState }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <link href="/stylesheet/style.css" rel="stylesheet" />
+        <link href="/stylesheet/style.css" rel="stylesheet" />
         <title>Document</title>
         <script defer src="/app.js" />
         <script defer src="/vendor.js" />
