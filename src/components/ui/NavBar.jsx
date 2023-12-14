@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function NavBar({ user }) {
-
+  console.log(user)
   return (
       <nav className="nav">
           <a className="nav__link" href="/"> Главная</a>

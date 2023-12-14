@@ -18,7 +18,7 @@ export default function RegistrationPage() {
   
 
   return (
-      <div className="card">
+      <div className="form__card">
         <form onSubmit={handleSubmit}>
           <h2 className="register">Регистрация</h2>
           <p id="passwordError"></p>

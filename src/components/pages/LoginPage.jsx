@@ -16,16 +16,13 @@ export default function LoginPage() {
     }
   };
   
-
-  
   return (
-      <div className="card">
-        <form onSubmit={handleSubmit}>
+      <div className="form__card">
+        <form onSubmit={handleSubmit} className="form__login">
           <input type="password" minLength="8" name="password" placeholder="Пароль" autoComplete="Пароль" />
           <input type="email" name="email" placeholder="Введите свою почту" />
           <button className="tombol-register" type="submit" >Войти</button>
         </form>
       </div>
-
   );
 }

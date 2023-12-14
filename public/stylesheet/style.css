@@ -16,7 +16,7 @@ body {
     height: 100%;
 }
 
-.card {
+.form__card {
     width: 450px;
     background-color: #ffffff;
     backdrop-filter: blur(100px);
@@ -28,10 +28,11 @@ body {
     justify-content: center;
 }
 
-h2 {
+.form__card h2 {
     text-align: left;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 40px;
+    padding: 10px;
     margin-top: 0;
 }
 
@@ -171,4 +172,52 @@ h1{
     font-size: 55px;
     max-width: 700px;
     text-shadow:5px 5px 3px rgba(0, 0, 0, 0.7);
+}
+.albums{
+    padding-top: 20px;
+    width: 100%;
+}
+.albums h2{
+    font-size: 30px;
+    color: rgba(17, 17, 17, 0.8);
+    font-size: 20px;
+    text-align: center;
+}
+.card {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all linear 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all linear 0.3s;
+}
+.card img{
+    width: 100%;
+    min-height: 360px;
+    object-fit: cover;
+}
+
+.card__container {
+    padding: 2px 16px;
+}
+.albums__wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+.card h4{
+    font-size: 30px;
+    padding: 10px;
+}
+
+.card p{
+    font-size: 25px;
+    padding: 10px;
 }
