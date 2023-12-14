@@ -27,26 +27,16 @@ export default function RegistrationPage() {
 
 
   return (
-    <div >
-      <div style={formContainerStyle}>
-        <h1>Sign Up</h1>
+      <div className="card">
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-            <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputName1" className="form-label">Name</label>
-            <input name="name" type="text" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <h2 className="register">Регистрация</h2>
+          <p id="passwordError"></p>
+          <input type="text" placeholder="Введите имя" autoComplete="username" />
+          <input type="password" minLength="8" id="password" placeholder="Пароль" autoComplete="password" />
+          <input type="email" id="fullName" name="email" placeholder="Введите свою почту" />
+          <button className="tombol-register" type="submit" id="registerButton">Зарегистрироваться</button>
         </form>
       </div>
-    </div>
 
   );
 }
