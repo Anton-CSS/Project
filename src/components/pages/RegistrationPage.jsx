@@ -31,8 +31,8 @@ export default function RegistrationPage() {
         <form onSubmit={handleSubmit}>
           <h2 className="register">Регистрация</h2>
           <p id="passwordError"></p>
-          <input type="text" placeholder="Введите имя" autoComplete="username" />
-          <input type="password" minLength="8" id="password" placeholder="Пароль" autoComplete="password" />
+          <input type="text" placeholder="Введите имя" name="name" autoComplete="username" />
+          <input type="password" minLength="8" name="password" placeholder="Пароль" autoComplete="password" />
           <input type="email" id="fullName" name="email" placeholder="Введите свою почту" />
           <button className="tombol-register" type="submit" id="registerButton">Зарегистрироваться</button>
         </form>
