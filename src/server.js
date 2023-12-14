@@ -12,8 +12,11 @@ import resLocals from './middlewares/resLocals';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.engine('jsx', jsxRender);
-app.set('view engine', 'jsx');
+
+
+const extension = process.env.NODE_ENV === 'production' ? 'js' : 'jsx';
+app.engine(extension, jsxRender);
+app.set('view engine', extension);
 app.set('views', path.join(__dirname, 'components', 'pages'));
 
 app.use(morgan('dev'));
