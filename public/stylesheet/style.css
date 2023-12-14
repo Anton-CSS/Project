@@ -5,20 +5,14 @@
 }
 @importurl('https://fonts.googleapis.com/css2family=Plus+Jakarta+Sans:ital,wght@0,200;0,700;1,200&display=swap');
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-image: url('/public/photo/library-2.jpg');
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100%;
 }
 
@@ -45,11 +39,9 @@ h2 {
     text-align: center;
     font-weight: 600;
     margin-top: 0;
-}
-
-.register {
     font-size: 30px;
 }
+
 
 
 form {
@@ -134,4 +126,49 @@ a:hover {
     .mydict div {
         width: 100%;
     }
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(17, 17, 17, 0.8);
+}
+.nav__link{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid white;
+    color: white;
+    transition: all 0.5s linear;
+    background-color: transparent;
+}
+.nav__link:hover{
+    border:1px solid rgba(17, 17, 17, 0.8);
+    color: rgba(17, 17, 17, 0.8);
+    transition: all 0.5s linear;
+    background-color: white;
+}
+.picture{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    border-bottom: 2px solid rgba(17, 17, 17, 0.8);
+    padding-bottom: 20px;
+}
+.picture__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h1{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: white;
+    font-size: 55px;
+    max-width: 700px;
+    text-shadow:5px 5px 3px rgba(0, 0, 0, 0.7);
 }
