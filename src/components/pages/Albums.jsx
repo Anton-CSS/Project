@@ -33,6 +33,7 @@ const Albums = ({user}) => {
                 url={item.url}
                 userId={item.userId}
                 user={user}
+                fn={setPosts}
                 />
             )}
             </div>

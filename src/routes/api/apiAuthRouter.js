@@ -97,6 +97,19 @@ apiAuthRouter.delete('/del', async(req, res) => {
     }
   })
   await Album.destroy({where: {title}});
-  res.redirect('/')
+  const users = await User.findAll({
+    attributes: ['name', 'id'],
+    include: [{
+      model: Album,
+      where: {status: false},
+      attributes: ['title', 'id'],
+      include: [{
+        model: Picture,
+        attributes: ['url'],
+      }]
+    }]
+  });
+  console.log(users)
+  res.send(users)
 })
 export default apiAuthRouter;
