@@ -15,7 +15,7 @@ const Albums = ({user}) => {
                         obj.name = item.name
                         obj.title = el.title;
                         obj.userId = item.id
-                        obj.url = (el.Pictures[0].url.startsWith('http')) ? el.Pictures[0].url : `http://localhost:3000/uploads/${el.Pictures[0].url} `
+                        obj.url = (el.Pictures[0]?.url.startsWith('http')) ? el.Pictures[0].url : `http://localhost:3000/uploads/${el.Pictures[0].url} `
                         return obj;
                     })
                 })

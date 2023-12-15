@@ -6,6 +6,7 @@ import cookiesConfig from '../../config/cookiesConfig';
 import multer from "multer";
 const apiAuthRouter = express.Router();
 import upload from "../../middlewares/file";
+import { Op } from "sequelize";
 apiAuthRouter.post('/reg', async (req, res) => {
   try {
     const { name, password, email } = req.body;
@@ -84,8 +85,18 @@ apiAuthRouter.post('/upload', upload.array('photos', 12), async (req, res, next)
   res.redirect('/')
   });
 
-apiAuthRouter.delete('/del', (res, req) => {
-  console.log(req.body)
-  console.log('asass')
+apiAuthRouter.delete('/del', async(req, res) => {
+  const title = req.body.title;
+  const currentAlbum = await Album.findOne({where: {title}});
+  await Picture.destroy({where: {album_id: currentAlbum.id}});
+  await UserAlbum.destroy({where:{
+      [Op.and] : [
+        {user_id:res.locals.user.id},
+        {album_id:currentAlbum.id}
+      ]
+    }
+  })
+  await Album.destroy({where: {title}});
+  res.redirect('/')
 })
 export default apiAuthRouter;

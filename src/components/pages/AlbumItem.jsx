@@ -7,7 +7,7 @@ const AlbumItem = ({title, name, url, userId, user}) => {
     }
     const handleDel = async (e) =>{
         e.stopPropagation();
-        await fetch('http://localhost:3000/api/auth/del', {
+        await fetch(`http://localhost:3000/api/auth/del`, {
             method : "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -22,7 +22,7 @@ const AlbumItem = ({title, name, url, userId, user}) => {
                 <h4><b>{name}</b></h4>
                 <p>{title}</p>
             </div>
-            {(userId === user.id) &&
+            {user && (userId === user?.id) &&
             <div className="buttons">
                 <button type="button" className="btn_del" onClick={handleDel}>Удалить</button>
                 <button type="button" className="btn_upd">Обновить</button>
