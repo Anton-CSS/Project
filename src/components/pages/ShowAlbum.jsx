@@ -1,10 +1,11 @@
 import React from 'react';
+import PicItem from "./PicItem";
 
-const ShowAlbum = (props) => {
-    console.log(props)
+const ShowAlbum = ({pictures}) => {
+    
     return (
-        <div className="card">
-            <img src={url} alt="photo"/>
+        <div className="albums_wr">
+            {pictures.map(item => <PicItem key={item.id} url={item.url}/>)}
         </div>
     );
 };

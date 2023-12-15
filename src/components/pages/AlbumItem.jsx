@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 const AlbumItem = ({title, name, url}) => {
     const handleClick = async (e) =>{
-        await fetch(`http://localhost:3000/album/${title}`)
+        window.location.href =`/album/${title}`
     }
     return (
         <div className="card" onClick={handleClick}>

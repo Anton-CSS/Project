@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import AlbumItem from "./AlbumItem";
 
 const Albums = () => {
-    const [pic, setPic] = useState(null)
     const [posts, setPosts] = useState(null)
     useEffect(() => {
         fetch('http://localhost:3000/posts')
@@ -32,7 +31,6 @@ const Albums = () => {
                 name={item.name}
                 title={item.title}
                 url={item.url}
-                                                    handle
                 />
             )}
             </div>
