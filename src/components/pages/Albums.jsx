@@ -14,7 +14,7 @@ const Albums = () => {
                         obj.id = ++count
                         obj.name = item.name
                         obj.title = el.title;
-                        obj.url = el.Pictures[0].url
+                        obj.url = (el.Pictures[0].url.startsWith('http')) ? el.Pictures[0].url : `http://localhost:3000/uploads/${el.Pictures[0].url} `
                         return obj;
                     })
                 })
@@ -23,7 +23,6 @@ const Albums = () => {
             })
     }, []);
     
-    console.log(posts)
     return (
         <div className="albums">
             <h2>Уже с нами</h2>

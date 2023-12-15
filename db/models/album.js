@@ -16,7 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   
   Album.init({
-    title: DataTypes.STRING,
+    title: {
+     type: DataTypes.STRING,
+      unique: true
+    },
     status: DataTypes.BOOLEAN
   }, {
     sequelize,
