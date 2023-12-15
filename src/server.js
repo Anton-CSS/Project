@@ -11,7 +11,7 @@ import resLocals from './middlewares/resLocals';
 import bodyParser from "body-parser";
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');

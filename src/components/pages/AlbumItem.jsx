@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-const AlbumItem = ({title, name, url}) => {
+const AlbumItem = ({title, name, url, userId, user}) => {
+    console.log(user)
     const handleClick = async (e) =>{
         window.location.href =`/album/${title}`
     }
@@ -11,6 +12,7 @@ const AlbumItem = ({title, name, url}) => {
                 <h4><b>{name}</b></h4>
                 <p>{title}</p>
             </div>
+            {}
         </div>
     )
 };
