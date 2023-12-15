@@ -20,7 +20,7 @@ export default function LoginPage() {
       <div className="form__card">
         <h2 className="register">Войти</h2>
         <form onSubmit={handleSubmit} className="form__log">
-          <input type="password" minLength="8" name="password" placeholder="Пароль" autoComplete="Пароль" />
+          <input type="password" minLength="5" name="password" placeholder="Пароль" autoComplete="Пароль" />
           <input type="email" name="email" placeholder="Введите свою почту" />
           <button className="tombol-register" type="submit" >Войти</button>
         </form>

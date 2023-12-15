@@ -1,11 +1,10 @@
 import express from 'express';
 import { Picture, Album, User } from '../../../db/models'
 const indexRouter = express.Router();
-
+import { Op } from 'sequelize';
 indexRouter.get('/', (req, res) => res.render('MainPage'));
 indexRouter.get('/add', (req, res) => res.render('AddNewAlbum'));
 indexRouter.get('/posts', async (req, res) =>{
- 
  const users = await User.findAll({
   attributes: ['name', 'id'],
   include: [{

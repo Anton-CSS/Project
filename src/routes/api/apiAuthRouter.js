@@ -109,7 +109,6 @@ apiAuthRouter.delete('/del', async(req, res) => {
       }]
     }]
   });
-  console.log(users)
   res.send(users)
 })
 export default apiAuthRouter;

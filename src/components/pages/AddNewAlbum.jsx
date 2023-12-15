@@ -19,7 +19,6 @@ const AddNewAlbum = ({user}) => {
                 </form>
             </div>
         </>
-        
     );
 };
 

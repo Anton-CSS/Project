@@ -16,7 +16,7 @@ const AlbumItem = ({title, name, url, userId, user, fn}) => {
         })
         let count = 0;
         const result = await response.json();
-        const array = result.map((item, index) =>{
+        const array = result.map((item) =>{
             return item.Albums.map((el) =>{
                 const obj = {};
                 obj.id = ++count
