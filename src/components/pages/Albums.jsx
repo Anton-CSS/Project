@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import AlbumItem from "./AlbumItem";
 
 const Albums = () => {
+    const [pic, setPic] = useState(null)
     const [posts, setPosts] = useState(null)
     useEffect(() => {
         fetch('http://localhost:3000/posts')
@@ -14,7 +15,7 @@ const Albums = () => {
                         obj.id = ++count
                         obj.name = item.name
                         obj.title = el.title;
-                        obj.url = el.Pictures[0].url
+                        obj.url = (el.Pictures[0].url.startsWith('http')) ? el.Pictures[0].url : `http://localhost:3000/uploads/${el.Pictures[0].url} `
                         return obj;
                     })
                 })
@@ -23,7 +24,6 @@ const Albums = () => {
             })
     }, []);
     
-    console.log(posts)
     return (
         <div className="albums">
             <h2>Уже с нами</h2>
@@ -32,6 +32,7 @@ const Albums = () => {
                 name={item.name}
                 title={item.title}
                 url={item.url}
+                                                    handle
                 />
             )}
             </div>

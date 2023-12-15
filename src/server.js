@@ -7,11 +7,9 @@ import apiAuthRouter from './routes/api/apiAuthRouter';
 import authRouter from './routes/render/authRouter';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/render/indexRouter';
-import multer from 'multer';
 import resLocals from './middlewares/resLocals';
 import bodyParser from "body-parser";
 
-const upload = multer({ dest: 'uploads/' });
 const app = express();
 const PORT = process.env.PORT || 3001;
 

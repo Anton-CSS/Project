@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import NavBar from "../ui/NavBar";
 import Picture from "./Picture";
 import Albums from "./Albums";
@@ -8,7 +8,7 @@ export default function MainPage({ user}) {
       <>
           <NavBar user={user}/>
           <Picture/>
-          <Albums/>
+          <Albums />
       </>
   )
 }

@@ -1,6 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import { User } from '../../../db/models';
+import { User, Album, Picture, UserAlbum } from '../../../db/models';
 import generateTokens from '../../utils/generateTokens';
 import cookiesConfig from '../../config/cookiesConfig';
 import multer from "multer";
@@ -74,10 +74,14 @@ const storage = multer.diskStorage({
   }
 })
 
-apiAuthRouter.post('/upload', upload.array('photos', 12), function (req, res, next) {
-    // req.files - массив файлов `photos`
-    // req.body сохранит текстовые поля, если они будут
-  console.log(req.files)
+apiAuthRouter.post('/upload', upload.array('photos', 12), async (req, res, next) => {
+  await Album.create({ title: req.body.title, status: req.body.status === 'on' ? true : false});
+  const album = await Album.findOne({where:{title: req.body.title}, attributes: ['id']})
+
+  const promises = req.files.map(item => Picture.create({url: item.originalname, album_id: album.id}))
+  await Promise.all(promises)
+  await UserAlbum.create({user_id: res.locals.user.id, album_id: album.id});
+  res.redirect('/')
   });
 
 
