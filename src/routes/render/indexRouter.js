@@ -24,7 +24,6 @@ indexRouter.get('/album/:title', async (req, res) => {
  const title = req.params.title;
  const album = await Album.findOne({where:{title}});
  const pictures = await Picture.findAll({where:{album_id: album.id}});
- console.log(pictures)
  res.render('ShowAlbum', {pictures})
 }) ;
 

@@ -1,8 +1,8 @@
 import multer from "multer";
-
+import path from 'path'
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'C:\\Users\\92515\\Desktop\\Elbrus\\project\\public\\uploads') // Укажите путь для сохранения фотографий
+        cb(null, path.resolve(__dirname, '../../public/uploads')) // Укажите путь для сохранения фотографий
     },
     filename: function(req, file, cb) {
         cb(null, file.originalname)

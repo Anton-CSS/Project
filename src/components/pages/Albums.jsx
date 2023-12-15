@@ -32,6 +32,7 @@ const Albums = ({user}) => {
                 title={item.title}
                 url={item.url}
                 userId={item.userId}
+                user={user}
                 />
             )}
             </div>

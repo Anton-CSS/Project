@@ -8,7 +8,7 @@ export default function MainPage({ user}) {
       <>
           <NavBar user={user}/>
           <Picture/>
-          <Albums />
+          <Albums user={user}/>
       </>
   )
 }

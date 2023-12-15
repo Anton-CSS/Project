@@ -84,5 +84,8 @@ apiAuthRouter.post('/upload', upload.array('photos', 12), async (req, res, next)
   res.redirect('/')
   });
 
-
+apiAuthRouter.delete('/del', (res, req) => {
+  console.log(req.body)
+  console.log('asass')
+})
 export default apiAuthRouter;
